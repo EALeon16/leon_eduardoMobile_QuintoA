@@ -1,4 +1,4 @@
-package com.example.leon_eduardo;
+package com.example.leon_eduardo.vista.actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.leon_eduardo.R;
 
 public class activity_sumar extends AppCompatActivity implements View.OnClickListener{
 

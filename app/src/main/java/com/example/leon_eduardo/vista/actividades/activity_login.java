@@ -1,13 +1,14 @@
-package com.example.leon_eduardo;
+package com.example.leon_eduardo.vista.actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.leon_eduardo.R;
 
 public class activity_login extends AppCompatActivity implements  View.OnClickListener {
     EditText cajaUsuario, cajaPassword;

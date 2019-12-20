@@ -5,14 +5,25 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Leon Eduardo"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActividadRecibirParametros"></activity>
-        <activity android:name=".ActividadEnviarParametors" />
-        <activity android:name=".activity_sumar" />
-        <activity android:name=".activity_login" />
+        <activity android:name=".ActividadMP"></activity>
+        <activity android:name=".ActividadMI" />
+        <activity android:name=".vista.actividades.ActividadRecycleArtistas" />
+        <activity
+            android:name=".vista.navigation_drawer"
+            android:label="Leon Eduardo"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".vista.actividades.actividad_escuchar" />
+        <activity android:name=".vista.fragmentos.fragmento" />
+        <activity android:name=".vista.actividades.ActividadRecibirParametros" />
+        <activity android:name=".vista.actividades.ActividadEnviarParametors" />
+        <activity android:name=".vista.actividades.activity_sumar" />
+        <activity android:name=".vista.actividades.activity_login" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

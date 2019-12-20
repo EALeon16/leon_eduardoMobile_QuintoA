@@ -1,10 +1,11 @@
-package com.example.leon_eduardo;
+package com.example.leon_eduardo.vista.actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.leon_eduardo.R;
 
 public class ActividadRecibirParametros extends AppCompatActivity {
 

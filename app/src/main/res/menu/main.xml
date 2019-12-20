@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/opcionEventos"
+        android:title="Eventos">
+        <menu>
+            <item
+                android:id="@+id/opcionLogin"
+                android:title="Login">
+            </item>
+            <item
+                android:id="@+id/opcionSuma"
+                android:title="Suma">
+            </item>
+            <item
+                android:id="@+id/opcionParametroe"
+                android:title="Parametroe">
+            </item>
+            <item
+                android:id="@+id/dlgSumar"
+                android:title="Dialogo Sumar">
+            </item>
+
+
+        </menu>>
+
+
+    </item>
+    <item
+        android:id="@+id/opcionFragmentos"
+        android:title="Fragmentos">
+        <menu>
+            <item
+                android:id="@+id/opcionColores"
+                android:title="Colores">
+            </item>
+            <item
+                android:id="@+id/opcionEscuchar"
+                android:title="Escuchar">
+            </item>
+            <item
+                android:id="@+id/opcionAgregarartista"
+                android:title="Agregar Artista">
+            </item>
+            <item
+                android:id="@+id/opcionMI"
+                android:title="MI">
+            </item>
+            <item
+                android:id="@+id/opcionMP"
+                android:title="Memoria MP">
+            </item>
+
+        </menu>
+
+
+    </item>
+
+    <item
+        android:id="@+id/opcionSensores"
+        android:title="Sensores">
+        <menu>
+            <item
+                android:id="@+id/opcionProximidad"
+                android:title="Proximidad">
+            </item>
+            <item
+                android:id="@+id/opcionLuz"
+                android:title="Luz">
+            </item>
+            <item
+                android:id="@+id/opcionAcelerometria"
+                android:title="Acelerometria">
+            </item>
+
+
+        </menu>>
+    </item>
+
+    <item
+        android:id="@+id/opcionArchivos"
+        android:title="Archivos">
+        <menu>
+            <item
+                android:id="@+id/opcionInterno"
+                android:title="Interno">
+            </item>
+            <item
+                android:id="@+id/opcionPrograma"
+                android:title="Programa">
+            </item>
+        </menu>>
+    </item>
+
+    <item
+        android:id="@+id/opcionBD"
+        android:title="BD">
+        <menu>
+            <item
+                android:id="@+id/opcionSD"
+                android:title="SD">
+            </item>
+            <item
+                android:id="@+id/opcionHelper"
+                android:title="Helper">
+            </item>
+            <item
+                android:id="@+id/opcionORM"
+                android:title="ORM">
+            </item>
+
+        </menu>>
+    </item>
+
+    <item
+        android:id="@+id/opcionSW"
+        android:title="SW">
+        <menu>
+            <item
+                android:id="@+id/opcionHilo"
+                android:title="Hilo">
+            </item>
+            <item
+                android:id="@+id/opcionVolly"
+                android:title="Volly">
+            </item>
+        </menu>>
+    </item>
+    <item
+        android:id="@+id/opcionMapas"
+        android:title="Mapas">
+
+
+</item>
+</menu>
