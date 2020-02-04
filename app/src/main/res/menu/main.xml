@@ -103,6 +103,10 @@
                 android:title="Hilo">
             </item>
             <item
+                android:id="@+id/opcionHiloEjercicio"
+                android:title="Hilo Ejercicio">
+            </item>
+            <item
                 android:id="@+id/opcionVolly"
                 android:title="Volly">
             </item>

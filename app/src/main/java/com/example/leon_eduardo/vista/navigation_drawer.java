@@ -12,6 +12,7 @@ import com.example.leon_eduardo.vista.actividades.ActividadEnviarParametors;
 import com.example.leon_eduardo.vista.actividades.ActividadProducto;
 import com.example.leon_eduardo.vista.actividades.ActividadSD;
 import com.example.leon_eduardo.vista.actividades.ActividadSWAlumnos;
+import com.example.leon_eduardo.vista.actividades.ActividadSWEjercicio;
 import com.example.leon_eduardo.vista.actividades.actividad_escuchar;
 import com.example.leon_eduardo.vista.actividades.activity_login;
 import com.example.leon_eduardo.vista.actividades.activity_sumar;
@@ -213,6 +214,11 @@ public class navigation_drawer extends AppCompatActivity implements NavigationVi
                 break;
             case R.id.opcionHilo:
                 intent = new Intent(navigation_drawer.this, ActividadSWAlumnos.class);
+                startActivity(intent);
+
+                break;
+            case R.id.opcionHiloEjercicio:
+                intent = new Intent(navigation_drawer.this, ActividadSWEjercicio.class);
                 startActivity(intent);
 
                 break;

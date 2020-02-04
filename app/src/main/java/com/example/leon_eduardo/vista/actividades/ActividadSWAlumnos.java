@@ -220,8 +220,6 @@ public class ActividadSWAlumnos extends AppCompatActivity implements View.OnClic
             datos.setText(s);
             cargarRecycler(s);
             cargarByYD(s);
-
-        //descomponer(Integer.parseInt(s.charAt(0)+""),s.substring(2,s.length()));
         }
 
 
