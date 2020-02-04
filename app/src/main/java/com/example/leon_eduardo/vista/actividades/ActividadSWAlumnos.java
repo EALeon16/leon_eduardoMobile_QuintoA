@@ -99,7 +99,8 @@ public class ActividadSWAlumnos extends AppCompatActivity implements View.OnClic
                 Log.e("aaaa", " esta es la consulta" + consulta);
 
 
-            }else if(parametros[1].equals("2")){
+            }
+            else if(parametros[1].equals("2")){
                 try{
                     url = new URL(ruta);
 
@@ -132,6 +133,45 @@ public class ActividadSWAlumnos extends AppCompatActivity implements View.OnClic
                 consulta = parametros[1] + "-consula ingresado" + consulta;
                 Log.e("aaaaa", "AAAAAAAAAAAAAAAAAAAA" + consulta);
 
+
+            }else if(parametros[1].equals("5")){
+                try {
+                    url = new URL(ruta);
+                    URLConnection conexion = (HttpURLConnection) url.openConnection();
+                    conexion.setDoInput(true);
+                    conexion.setDoOutput(true);
+                    conexion.setUseCaches(false);
+                    conexion.setRequestProperty("Content-Type", "application/json");
+                    conexion.setRequestProperty("Accept", "application/json");
+                    conexion.connect();
+
+                    //se crea el json
+                    JSONObject json = new JSONObject();
+                    json.put("idalumno", parametros[2]);
+                    json.put("nombre", parametros[3]);
+                    json.put("direccion", parametros[4]);
+
+                    // Envio los parámetros post.
+                    OutputStream os = conexion.getOutputStream();
+                    BufferedWriter escritor = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+                    escritor.write(json.toString());
+                    escritor.flush();
+                    escritor.close();
+
+                    int respuesta = ((HttpURLConnection) conexion).getResponseCode();
+                    if (respuesta == HttpURLConnection.HTTP_OK) {
+                        BufferedReader lector = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+                        consulta += lector.readLine();
+                    }
+
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                consulta = parametros[1] + "-" + consulta;
 
             }
             else if(parametros[1].equals("4")){
@@ -186,37 +226,6 @@ public class ActividadSWAlumnos extends AppCompatActivity implements View.OnClic
 
 
     }
-
-
-    private void descomponer(int operacion, String cadena) {
-        if (operacion == 3) {
-            JSONObject json = null;
-            try {
-                json = new JSONObject(cadena);
-                String estado = json.getString("estado");
-                List<Alumno> lista = new ArrayList<Alumno>();
-                if(estado.equals("1")){
-                    Alumno alumno = new Alumno();
-                    alumno.setIdAlumno(json.getJSONObject("alumno").getInt("idAlumno"));
-                    alumno.setNombre(json.getJSONObject("alumno").getString("nombre"));
-                    alumno.setDireccion(json.getJSONObject("alumno").getString("direccion"));
-                    lista.add(alumno);
-                    listaAlumno.add(alumno);
-                    adapter = new Alumno_Adapter(listaAlumno);
-                    recyclerAlumnosSW.setLayoutManager(new LinearLayoutManager(this));
-                    recyclerAlumnosSW.setAdapter(adapter);
-
-                }else{
-                    Toast.makeText(getApplicationContext(),"No existe ese estudiante", Toast
-                            .LENGTH_SHORT).show();
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-
 
 
 
@@ -277,12 +286,12 @@ public class ActividadSWAlumnos extends AppCompatActivity implements View.OnClic
             listaAlumno = new ArrayList<>();
             for (int i = 0; i< alumnos.length() ; i++){
                 JSONObject a = alumnos.getJSONObject(i);
-                Alumno alum = new Alumno();
-                alum.setIdAlumno(a.getInt("idalumno"));
+                Alumno alumnoR = new Alumno();
+                alumnoR.setIdAlumno(a.getInt("idalumno"));
 
-                alum.setNombre(a.getString("nombre"));
-                alum.setDireccion(a.getString("direccion"));
-                listaAlumno.add(alum);
+                alumnoR.setNombre(a.getString("nombre"));
+                alumnoR.setDireccion(a.getString("direccion"));
+                listaAlumno.add(alumnoR);
             }
             adapter = new Alumno_Adapter(listaAlumno);
             adapter.setOnClick(new View.OnClickListener() {
@@ -295,7 +304,7 @@ public class ActividadSWAlumnos extends AppCompatActivity implements View.OnClic
             recyclerAlumnosSW.setAdapter(adapter);
 
         }catch (Exception ex){
-           // Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show();
+
         }
     }
 
@@ -307,106 +316,7 @@ public class ActividadSWAlumnos extends AppCompatActivity implements View.OnClic
         cajaNombres.setText(nombre+"");
         cajaDireccion.setText(direccion+"");
     }
-    private void descomponerConsulta(int operacion, String cadena){
-        if (operacion == 1){
-            try {
-                JSONObject json = new JSONObject(cadena);
-                String estado = json.getString("estado");
-                List<Alumno> lista = new ArrayList<Alumno>();
-                if(estado.equals("1")){
-                    JSONArray alumnosJson = json.getJSONArray("alumnos");
-                    for (int i = 0; i <alumnosJson.length();i++){
-                        Alumno alumno = new Alumno();
-                        alumno.setIdAlumno(alumnosJson.getJSONObject(i).getInt("idalumno"));
-                        alumno.setNombre(alumnosJson.getJSONObject(i).getString("nombre"));
-                        alumno.setDireccion(alumnosJson.getJSONObject(i).getString("direccion"));
-                        lista.add(alumno);
-                    }
-                    cargarLista(lista);
-                }else{
-                    Toast.makeText(getApplicationContext(),"No hay estudiantes agregados", Toast
-                            .LENGTH_SHORT).show();
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        } else if(operacion == 3){
-            JSONObject json = null;
-            try {
-                json = new JSONObject(cadena);
-                String estado = json.getString("estado");
-                List<Alumno> lista = new ArrayList<Alumno>();
-                if(estado.equals("1")){
-                    Alumno alumno = new Alumno();
-                    alumno.setIdAlumno(json.getJSONObject("alumno").getInt("idAlumno"));
-                    alumno.setNombre(json.getJSONObject("alumno").getString("nombre"));
-                    alumno.setDireccion(json.getJSONObject("alumno").getString("direccion"));
-                    lista.add(alumno);
-                    cargarLista(lista);
-                }else{
-                    Toast.makeText(getApplicationContext(),"No existe ese estudiante", Toast
-                            .LENGTH_SHORT).show();
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }else if(operacion == 2){
-            JSONObject json = null;
 
-
-            try {
-                json = new JSONObject(cadena);
-
-                String estado = json.getString("estado");
-                if(estado.equals("1")){
-                    Toast.makeText(getApplicationContext(),"Alumno insertado correctamente", Toast
-                            .LENGTH_SHORT).show();
-                    sw = new Servicioweb();
-                    sw.execute(host.concat(get),"1");
-                }else{
-                    Toast.makeText(getApplicationContext(),"El Alumno no se pudo insertar", Toast
-                            .LENGTH_SHORT).show();
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }else if(operacion == 4){
-            JSONObject json = null;
-            try {
-                json = new JSONObject(cadena);
-                String estado = json.getString("estado");
-                if(estado.equals("1")){
-                    Toast.makeText(getApplicationContext(),"Alumno actualizado correctamente", Toast
-                            .LENGTH_SHORT).show();
-                    sw = new Servicioweb();
-                    sw.execute(host.concat(get),"1");
-                }else{
-                    Toast.makeText(getApplicationContext(),"El Alumno no se pudo actualizar", Toast
-                            .LENGTH_SHORT).show();
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }else if(operacion == 5){
-            JSONObject json = null;
-            try {
-                json = new JSONObject(cadena);
-                String estado = json.getString("estado");
-                if(estado.equals("1")){
-                    Toast.makeText(getApplicationContext(),"Alumno eliminado correctamente", Toast
-                            .LENGTH_SHORT).show();
-                    sw = new Servicioweb();
-                    sw.execute(get,"1");
-                }else{
-                    Toast.makeText(getApplicationContext(),"El Alumno no se pudo eliminar", Toast
-                            .LENGTH_SHORT).show();
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
 
     public void cargarLista(List<Alumno> lista){
         listaAlumno = new ArrayList<Alumno>();
@@ -447,10 +357,11 @@ public class ActividadSWAlumnos extends AppCompatActivity implements View.OnClic
             case R.id.btnEliminarAlumnoSW:
                 sw.execute(host.concat(delete),"4", cajaID.getText().toString());
                 break;
-           // case R.id.btnAgregarAlumnoSW:
-             //   sw.execute(host.concat(insert), "2", cajaNombres.getText().toString(), cajaDireccion.getText().toString());
+            case R.id.btnEditarAulumnoSW:
+                sw.execute(host.concat(update), "5", cajaID.getText().toString(), cajaNombres.getText().toString(), cajaDireccion.getText().toString());
+                break;
 
-               // break;
+
         }
 
     }
