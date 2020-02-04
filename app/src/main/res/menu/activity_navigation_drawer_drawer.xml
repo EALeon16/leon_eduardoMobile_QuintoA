@@ -4,10 +4,80 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+        <item android:title="Eventos">
+            <menu>
+                <item
+                    android:id="@+id/nav_Login"
+                    android:title="Login">
+                </item>
+                <item
+                    android:id="@+id/nav_Suma"
+                    android:title="Suma">
+                </item>
+                <item
+                    android:id="@+id/nav_Parametroe"
+                    android:title="Parametroe">
+                </item>
+                <item
+                    android:id="@+id/nav_dlgSumar"
+                    android:title="Dialogo Sumar">
+                </item>
+            </menu>
+        </item>
+
+
+
+        <item android:title="BD">
+            <menu>
+                <item
+                    android:id="@+id/opcionSD"
+                    android:title="SD">
+                </item>
+                <item
+                    android:id="@+id/opcionHelper"
+                    android:title="Helper">
+                </item>
+                <item
+                    android:id="@+id/opcionORM"
+                    android:title="ORM">
+                </item>
+            </menu>
+        </item>
+
+
         <item
-            android:id="@+id/nav_view"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Suma" />
+            android:id="@+id/opcionFragmentos"
+            android:title="Fragmentos">
+            <menu>
+                <item
+                    android:id="@+id/opcionColores"
+                    android:title="Colores">
+                </item>
+                <item
+                    android:id="@+id/opcionEscuchar"
+                    android:title="Escuchar">
+                </item>
+
+                <item
+                    android:id="@+id/opcionAgregarartista"
+                    android:title="Agregar Artista">
+                </item>
+                <item
+                    android:id="@+id/opcionMI"
+                    android:title="MI">
+                </item>
+                <item
+                    android:id="@+id/opcionMP"
+                    android:title="Memoria MP">
+                </item>
+
+            </menu>
+
+
+        </item>
+
+
+
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
@@ -17,9 +87,12 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
         <item
-            android:id="@+id/opcionEscuchar"
+            android:id="@+id/nav_ver"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Escuchar" />
+            android:title="mmm" />
+        <item
+            android:id="@+id/nav_verarchivo"
+            android:title="Archivo" />
     </group>
 
     <item android:title="Communicate">

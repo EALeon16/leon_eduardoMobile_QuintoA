@@ -12,19 +12,19 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_Suma"
         android:name="com.example.leon_eduardo.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_Parametroe"
         android:name="com.example.leon_eduardo.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
-        android:id="@+id/nav_tools"
+        android:id="@+id/nav_dlgSumar"
         android:name="com.example.leon_eduardo.ui.tools.ToolsFragment"
         android:label="@string/menu_tools"
         tools:layout="@layout/fragment_tools" />
@@ -40,4 +40,49 @@
         android:name="com.example.leon_eduardo.ui.send.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
+    <fragment
+        android:id="@+id/nav_ver"
+        android:name="com.example.leon_eduardo.vista.fragmentos.frg_uno"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_frg_uno" />
+    <fragment
+        android:id="@+id/nav_Login"
+        android:name="com.example.leon_eduardo.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send"/>
+    <fragment
+        android:id="@+id/opcionColores"
+        android:name="com.example.leon_eduardo.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send"/>
+    <fragment
+        android:id="@+id/opcionEscuchar"
+        android:name="com.example.leon_eduardo.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send"/>
+    <fragment
+        android:id="@+id/opcionAgregarartista"
+        android:name="com.example.leon_eduardo.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send"/>
+    <fragment
+        android:id="@+id/opcionMI"
+        android:name="com.example.leon_eduardo.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send"/>
+    <fragment
+        android:id="@+id/opcionMP"
+        android:name="com.example.leon_eduardo.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send"/>
+    <fragment
+        android:id="@+id/opcionHelper"
+        android:name="com.example.leon_eduardo.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send"/>
+    <fragment
+        android:id="@+id/nav_verarchivo"
+        android:name="com.example.leon_eduardo.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send"/>
 </navigation>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.Toolbar android:id="@+id/toolbar2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:background="?attr/colorPrimary"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="?attr/actionBarTheme"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <menu xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/idMemoriaMI"
+            android:title="MI"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/idMemoriaMP"
+            android:title="MP"
+            app:showAsAction="always" />
+    </menu>
+</androidx.appcompat.widget.Toolbar>

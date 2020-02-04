@@ -4,12 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imgFoto"
-        android:layout_width="179dp"
-        android:layout_height="149dp"
-        android:layout_weight="1" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,22 +11,28 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/lblNombreArtista"
+            android:id="@+id/txtItemSWId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/lblApellidoArtista"
+            android:id="@+id/txtItemSWAlumno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/lblNombreArtistico"
+            android:id="@+id/txtItemSWDireccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
     </LinearLayout>
 
 

@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,9 +16,12 @@ import java.util.List;
 
 import com.example.leon_eduardo.modelo.Artista;
 
-public class Artista_adapter extends RecyclerView.Adapter<Artista_adapter.ViewHolderArtista> {
+public class Artista_adapter extends RecyclerView.Adapter<Artista_adapter.ViewHolderArtista> implements  View.OnClickListener {
+
+
 
     List<Artista> lista;
+    public View.OnClickListener cliclk;
     public Artista_adapter(List<Artista> lista){
         this.lista = lista;
 
@@ -27,6 +31,7 @@ public class Artista_adapter extends RecyclerView.Adapter<Artista_adapter.ViewHo
     @Override
     public ViewHolderArtista onCreateViewHolder( ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artista, null);
+        view.setOnClickListener(this);
         return new ViewHolderArtista(view);
     }
 
@@ -45,6 +50,21 @@ public class Artista_adapter extends RecyclerView.Adapter<Artista_adapter.ViewHo
     public int getItemCount() {
         return lista.size();
     }
+
+    public void onClick(View v) {
+
+        if(cliclk != null){
+            cliclk.onClick(v);
+        }
+
+    }
+
+
+
+    public void setOnClick(View.OnClickListener listener){
+        this.cliclk = listener;
+    }
+
 
     public static class ViewHolderArtista extends  RecyclerView.ViewHolder{
         TextView datoNombres;

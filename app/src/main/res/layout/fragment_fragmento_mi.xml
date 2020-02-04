@@ -8,7 +8,7 @@
     tools:context=".ActividadMI">
 
     <EditText
-        android:id="@+id/txtNombresMI"
+        android:id="@+id/txtNombresMIM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -16,7 +16,7 @@
         android:hint="Ingrese su nombre" />
 
     <EditText
-        android:id="@+id/txtApellidosMI"
+        android:id="@+id/txtApellidosMIM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -25,7 +25,7 @@
 
 
     <EditText
-        android:id="@+id/txtNombreAMI"
+        android:id="@+id/txtNombreAMIM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -33,7 +33,7 @@
         android:hint="Ingrese nombre Artisitico" />
 
     <EditText
-        android:id="@+id/txtFotoMI"
+        android:id="@+id/txtFotoMIM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -46,50 +46,31 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnGuardarMI"
+            android:id="@+id/btnGuardarMIM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" + " />
 
         <Button
-            android:id="@+id/btnBuscarTodosMI"
+            android:id="@+id/btnBuscarTodosMIM"
             android:layout_width="24dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="BT" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="67dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/txtVer"
+        android:id="@+id/txtVerM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:id="@+id/recyclerMI"
+        android:id="@+id/recyclerMIM"
         android:layout_height="match_parent" />
 
 </LinearLayout>

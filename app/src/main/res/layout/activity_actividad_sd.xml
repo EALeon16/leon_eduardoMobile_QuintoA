@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".vista.actividades.ActividadSD">
+
+    <EditText
+        android:id="@+id/txtNombreSD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nombre" />
+
+    <EditText
+        android:id="@+id/txtApellidoSD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Apellido" />
+    <EditText
+        android:id="@+id/txtNombreArtistiocoSD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nombre Artistico" />
+
+    <TextView
+        android:id="@+id/lblSD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnLeerSD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Leer" />
+
+    <Button
+        android:id="@+id/btnEscribirSD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Escribir" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/recyclerSD"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

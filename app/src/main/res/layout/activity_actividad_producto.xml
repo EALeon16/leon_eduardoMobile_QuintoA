@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".vista.actividades.ActividadProducto">
+
+    <TextView
+        android:id="@+id/lblCodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Codigo" />
+
+    <EditText
+        android:id="@+id/idPcodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+         />
+
+    <TextView
+        android:id="@+id/lblPdescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripcion" />
+    <EditText
+        android:id="@+id/idPdescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+         />
+
+
+    <TextView
+        android:id="@+id/lblPprecio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Precio" />
+    <EditText
+        android:id="@+id/idPprecio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"/>
+
+    <TextView
+        android:id="@+id/lblPcantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cantidad" />
+    <EditText
+        android:id="@+id/idPcantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnAgregarproducto"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text=" + " />
+
+        <Button
+            android:id="@+id/btnListarProducto"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:text="Buscar" />
+
+        <Button
+            android:id="@+id/btnListar"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:text="Listar" />
+
+        <Button
+            android:id="@+id/btnEliminarAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Eli.T" />
+
+        <Button
+            android:id="@+id/btnEliminarSeleccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Eli.S" />
+
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Editar" />
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idrecyclerProducto"
+        android:layout_width="245dp"
+        android:layout_height="250dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

@@ -15,10 +15,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.leon_eduardo.vista.actividades.ActividadEnviarParametors;
-import com.example.leon_eduardo.vista.actividades.ActividadRecycleArtistas;
+import com.example.leon_eduardo.vista.actividades.ActividadProducto;
+import com.example.leon_eduardo.vista.actividades.ActividadSD;
 import com.example.leon_eduardo.vista.actividades.actividad_escuchar;
 import com.example.leon_eduardo.vista.actividades.activity_login;
 import com.example.leon_eduardo.vista.actividades.activity_sumar;
+import com.example.leon_eduardo.vista.actividades.main_archivo;
 import com.example.leon_eduardo.vista.fragmentos.fragmento;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -70,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         MenuInflater inflaterMenu = getMenuInflater();
         inflaterMenu.inflate(R.menu. main, menu);
 
+
+
         return true;
 
     }
@@ -120,18 +124,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(MainActivity.this, actividad_escuchar.class);
                 startActivity(intent);
                 break;
-            case R.id.opcionAgregarartista:
-                intent = new Intent(MainActivity.this, ActividadRecycleArtistas.class);
+
+            case R.id.opcionHelper:
+                intent = new Intent(MainActivity.this, ActividadProducto.class);
                 startActivity(intent);
                 break;
-            case R.id.opcionMI:
-                intent = new Intent(MainActivity.this, ActividadMI.class);
+            case R.id.opcionArchivos2:
+                intent = new Intent(MainActivity.this, main_archivo.class);
                 startActivity(intent);
+
                 break;
-            case R.id.opcionMP:
-                intent = new Intent(MainActivity.this, ActividadMP.class);
+            case R.id.opcionSD:
+                intent = new Intent(MainActivity.this, ActividadSD.class);
                 startActivity(intent);
+
                 break;
+
 
         }
 

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".vista.actividades.ActividadProducto">
+    <TextView
+        android:id="@+id/lblIdAlumnoSW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID" />
+
+    <EditText
+        android:id="@+id/txtIdAlumnoSW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="" />
+
+    <TextView
+        android:id="@+id/lblNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre" />
+
+    <EditText
+        android:id="@+id/idAgregarNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        />
+
+    <TextView
+        android:id="@+id/lblDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Direccion" />
+    <EditText
+        android:id="@+id/idAgregarDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        />
+
+    <TextView
+        android:id="@+id/textVerAlumnosSW"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:text="" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnAgregarAlumnoSW"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text=" + " />
+
+        <Button
+            android:id="@+id/btnBuscarAlumnoSW"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:text="Buscar" />
+
+        <Button
+            android:id="@+id/btnListarAlumnosSW"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:text="Listar" />
+
+        <Button
+            android:id="@+id/btnEliminarAlumnoSW"
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Eli.T" />
+
+        <Button
+            android:id="@+id/btnEditarAulumnoSW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Editar" />
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idrecyclerAlumnoSW"
+        android:layout_width="245dp"
+        android:layout_height="250dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

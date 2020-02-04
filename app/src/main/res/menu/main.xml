@@ -38,18 +38,6 @@
                 android:id="@+id/opcionEscuchar"
                 android:title="Escuchar">
             </item>
-            <item
-                android:id="@+id/opcionAgregarartista"
-                android:title="Agregar Artista">
-            </item>
-            <item
-                android:id="@+id/opcionMI"
-                android:title="MI">
-            </item>
-            <item
-                android:id="@+id/opcionMP"
-                android:title="Memoria MP">
-            </item>
 
         </menu>
 
@@ -78,19 +66,12 @@
     </item>
 
     <item
-        android:id="@+id/opcionArchivos"
+        android:id="@+id/opcionArchivos2"
         android:title="Archivos">
-        <menu>
-            <item
-                android:id="@+id/opcionInterno"
-                android:title="Interno">
-            </item>
-            <item
-                android:id="@+id/opcionPrograma"
-                android:title="Programa">
-            </item>
-        </menu>>
+
     </item>
+
+
 
     <item
         android:id="@+id/opcionBD"
@@ -108,6 +89,7 @@
                 android:id="@+id/opcionORM"
                 android:title="ORM">
             </item>
+
 
         </menu>>
     </item>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <item
+        android:id="@+id/idMemoriaMI"
+        android:title="MI"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/idMemoriaMP"
+        android:title="MP"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/idMemoriaReyes"
+        android:title="R"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/idArtiostasRecycler"
+        android:title="A"
+        app:showAsAction="always" />
+
+
+</menu>

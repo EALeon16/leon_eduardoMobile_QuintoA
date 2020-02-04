@@ -2,21 +2,40 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.leon_eduardo">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+
     <application
+        android:usesCleartextTraffic="true"
+        android:name=".modelo.config.AplicacionORM"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Leon Eduardo"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActividadMP"></activity>
-        <activity android:name=".ActividadMI" />
-        <activity android:name=".vista.actividades.ActividadRecycleArtistas" />
+        <activity android:name=".vista.actividades.ActividadSWAlumnos"></activity>
+        <activity android:name=".vista.actividades.ActividadCarroORM" />
+        <activity android:name=".vista.actividades.main_archivo" />
+        <activity android:name=".vista.actividades.ActividadProducto" />
+        <activity android:name=".vista.actividades.ActividadSD" />
+        <activity android:name=".vista.actividades.ActividadActivoProgramaReyes" />
         <activity
             android:name=".vista.navigation_drawer"
             android:label="Leon Eduardo"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".vista.actividades.actividad_escuchar" />
         <activity android:name=".vista.fragmentos.fragmento" />
@@ -24,13 +43,23 @@
         <activity android:name=".vista.actividades.ActividadEnviarParametors" />
         <activity android:name=".vista.actividades.activity_sumar" />
         <activity android:name=".vista.actividades.activity_login" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainActivity" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="movil5A" />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="com.example.leon_eduardo.modelo.Automovil" />
+
+        <provider
+            android:name="com.activeandroid.content.ContentProvider"
+            android:authorities="com.example.leon_eduardo"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>
