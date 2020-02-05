@@ -26,10 +26,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.WeakHashMap;
 
 public class ActividadSWEjercicio extends AppCompatActivity implements View.OnClickListener {
 
-    TextView ver, wea;
+    TextView ver, wea, leervisibility, lclouds, ldt, lcod, leerBase;
     Button btnver;
     String host = "https://samples.openweathermap.org/";
     String get = "/data/2.5/weather?id=2172797&appid=b6907d289e10d714a6e88b30761fae22";
@@ -49,6 +50,11 @@ public class ActividadSWEjercicio extends AppCompatActivity implements View.OnCl
         ver = findViewById(R.id.verSWHILO);
         btnver = findViewById(R.id.verSWEjercicio);
         wea = findViewById(R.id.verSWweather);
+        leervisibility = findViewById(R.id.verSWwVisibility);
+        lclouds = findViewById(R.id.verSWClouds);
+        ldt = findViewById(R.id.verSWdt);
+        lcod = findViewById(R.id.verSWwcod);
+        leerBase = findViewById(R.id.verSWbase);
         btnver.setOnClickListener(this);
     }
 
@@ -119,11 +125,35 @@ public class ActividadSWEjercicio extends AppCompatActivity implements View.OnCl
 
 
 
-
+            line += "COORD" +  "\n";
             line += "Longitud = " + lon + "\n";
             line += "Latitud = " + lat + "\n";
 
             //////weather
+
+            String idW = "";
+            String main = "";
+            String description = "";
+            String icon = "";
+
+            String datosW = "";
+
+
+            JSONObject weather = new JSONObject(cadena);
+            JSONArray clima = weather.getJSONArray("weather");
+            for(int i =0; i<clima.length(); i++){
+                JSONObject c = clima.getJSONObject(i);
+                idW = c.getString("id");
+                main = c.getString("main");
+                description = c.getString("description");
+                icon = c.getString("icon");
+
+            }
+            datosW += "WEATHER" +  "\n";
+            datosW += "id = " + idW + "\n";
+            datosW += "main = " + main + "\n";
+            datosW += "description = " + description+ "\n";
+            datosW += "icon = " + icon + "\n";
 
 
 
@@ -141,17 +171,78 @@ public class ActividadSWEjercicio extends AppCompatActivity implements View.OnCl
             String temp_min = base.getJSONObject("main").getString("temp_min");
             String temp_max = base.getJSONObject("main").getString("temp_max");
 
+            leerb += "BASE"+ "\n";
             leerb += "base = "+ bases + "\n";
             leerb += "temp = "+ temp + "\n";
             leerb += "pressure = "+ pressure + "\n";
             leerb += "humidity = "+ humidity + "\n";
             leerb += "temp_min = "+ temp_min + "\n";
             leerb += "temp_max = "+ temp_max + "\n";
+            ///////////visibility
+
+
+            JSONObject visibility = new JSONObject(cadena);
+            String datosV = "";
+
+            String visi = visibility.getString("visibility");
+            String speed = visibility.getJSONObject("wind").getString("speed");
+            String deg = visibility.getJSONObject("wind").getString("deg");
+            datosV += "VISIBILITY"+ "\n";
+            datosV += "visibility = "+ visi + "\n";
+            datosV += "speed = "+ speed + "\n";
+            datosV += "deg = "+ deg + "\n";
+///////clouds
+
+            JSONObject clouds = new JSONObject(cadena);
+            String datosC = "";
+
+            String all = clouds.getJSONObject("clouds").getString("all");
+            datosC += "CLOUDS"+"\n";
+            datosC += "all = "+ all + "\n";
+
+            JSONObject dt = new JSONObject(cadena);
+            String datosDT = "";
+
+            String dtn = dt.getString("dt");
+            String type = dt.getJSONObject("sys").getString("type");
+            String idDT = dt.getJSONObject("sys").getString("id");
+            String message = dt.getJSONObject("sys").getString("message");
+            String country = dt.getJSONObject("sys").getString("country");
+            String sunrise = dt.getJSONObject("sys").getString("sunrise");
+            String sunset = dt.getJSONObject("sys").getString("sunset");
+
+            datosDT += "DT"+ "\n";
+            datosDT += "dt = "+ dtn + "\n";
+            datosDT += "type = "+ type + "\n";
+            datosDT += "id = "+ idDT + "\n";
+            datosDT += "message = "+ message + "\n";
+            datosDT += "country = "+ country + "\n";
+            datosDT += "sunrise = "+ sunrise + "\n";
+            datosDT += "sunset = "+ sunset + "\n";
+
+            JSONObject datos = new JSONObject(cadena);
+            String leerD = "";
+
+            String id = datos.getString("id");
+            String name = datos.getString("name");
+            String cod = datos.getString("cod");
+
+            leerD +=  "id = "+ id + "\n";
+            leerD +=  "name = "+ name + "\n";
+            leerD +=  "cod = "+ cod + "\n";
+
+
+
 
 
 
             ver.setText(line);
             wea.setText(leerb);
+            leervisibility.setText(datosV);
+            lclouds.setText(datosC);
+            ldt.setText(datosDT);
+            lcod.setText(leerD);
+            leerBase.setText(datosW);
 
 
 
@@ -161,28 +252,6 @@ public class ActividadSWEjercicio extends AppCompatActivity implements View.OnCl
 
     }
 
-
-    public void cargarW(String cadena){
-        String leerw = "";
-        try{
-            JSONObject weather = new JSONObject(cadena);
-            String wid = weather.getJSONObject("weather").getString("id");
-            String main = weather.getJSONObject("weather").getString("main");
-            String desc = weather.getJSONObject("weather").getString("description");
-            String icon = weather.getJSONObject("weather").getString("icon");
-
-
-
-            leerw+= "id = " + wid + "\n";
-            leerw += "main = " + main + "\n";
-            leerw += "description = " + desc + "\n";
-            leerw += "icon = " + icon + "\n";
-            //wea.setText(leerw);
-
-        }catch (Exception e){
-
-        }
-    }
 
 
 

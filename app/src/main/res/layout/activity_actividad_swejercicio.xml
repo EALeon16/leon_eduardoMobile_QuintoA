@@ -16,14 +16,46 @@
     <TextView
         android:id="@+id/verSWHILO"
         android:layout_width="match_parent"
-        android:layout_height="67dp"
+        android:layout_height="63dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/verSWbase"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
         android:text="" />
 
     <TextView
         android:id="@+id/verSWweather"
         android:layout_width="match_parent"
-        android:layout_height="107dp"
+        android:layout_height="140dp"
         android:text="" />
+
+    <TextView
+        android:id="@+id/verSWwVisibility"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/verSWClouds"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/verSWdt"
+        android:layout_width="match_parent"
+        android:layout_height="168dp"
+        android:text="" />
+
+
+    <TextView
+        android:id="@+id/verSWwcod"
+        android:layout_width="match_parent"
+        android:layout_height="138dp"
+        android:text="" />
+
 
 
 </LinearLayout>
